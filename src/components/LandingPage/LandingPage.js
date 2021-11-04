@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
 import './LandingPage.css';
-
-// CUSTOM COMPONENTS
-import RegisterForm from '../RegisterForm/RegisterForm';
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Grid from "@material-ui/core/Grid";
+import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import AppBar from '@material-ui/core/AppBar';
+import { Instagram, Facebook } from '@material-ui/icons';
 class LandingPage extends Component {
   state = {
     heading: 'Class Component',
@@ -16,14 +19,88 @@ class LandingPage extends Component {
     this.props.history.push('/login');
   };
 
-  render() {
-    return (
-      <div className="container">
-        <h2>{this.state.heading}</h2>
+  handleSocial = (url) => {
+    let newWindow = window.open(url, '_blank', 'noopener, noreferrer')
+    if (newWindow) newWindow.opener = null;
+  }
 
+
+  render() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      adaptiveHeight: true,
+      fade: true,
+    };
+
+    const Button = styled.button`
+    color: primary;
+    `
+
+    return (
+      <>
+        <div>
+          <Grid className="grid-col grid-col_10">
+            <Slider {...settings}>
+              <div>
+                <img alt="cat placeholder" src={require("../images/sn-concert.jpeg")} />
+              </div>
+              <div>
+                <img alt="cat placeholder" src={require("../images/bar-photo.jpeg")} />
+              </div>
+              <div>
+                <img alt="cat placeholder" src={require("../images/sonb.jpeg")} />
+              </div>
+            </Slider>
+          </Grid>
+        </div>
+        <div className="grid">
+            <div className="grid-col grid-col_8">
+              <p className="info-section">
+              Smokin' Ninjas Food Truck Lounge is a local lounge that offers a community of different food trucks in a bar setting.
+              Swing by to grab this weeks latest food truck goods while enjoying a 
+              drink in our facility!
+              </p>
+            </div>
+        </div>
+        <div>
+            <Link
+              to="/order"
+            >
+              <Button
+                primary
+                variant="contained"
+              >
+                View Our Menu
+        </Button>
+            </Link>
+        </div>
+
+        <AppBar
+          position="static"
+        >
+          <Grid
+            justify="space-evenly"
+            container
+            direction="row"
+            alignItems="center"
+          >
+            <Instagram style={{ fontSize: 40 }} onClick={() => this.handleSocial('https://www.instagram.com/ninjasushimn/?hl=en')}></Instagram>
+            <Facebook style={{ fontSize: 40 }} onClick={() => this.handleSocial('https://www.facebook.com/smokin.ninjas')}></Facebook>
+          </Grid>
+        </AppBar>
+        <div className="center"
+        >
+          <h1>Contact & Opening Times</h1>
+
+        </div>
         <div className="grid">
           <div className="grid-col grid-col_8">
             <p>
+              Testing testing 123
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
               id felis metus. Vestibulum et pulvinar tortor. Morbi pharetra
               lacus ut ex molestie blandit. Etiam et turpis sit amet risus
@@ -33,40 +110,10 @@ class LandingPage extends Component {
               nunc interdum, eu interdum justo facilisis. Sed pulvinar nulla ac
               dignissim efficitur. Quisque eget eros metus. Vestibulum bibendum
               fringilla nibh a luctus. Duis a sapien metus.
-            </p>
-
-            <p>
-              Praesent consectetur orci dui, id elementum eros facilisis id. Sed
-              id dolor in augue porttitor faucibus eget sit amet ante. Nunc
-              consectetur placerat pharetra. Aenean gravida ex ut erat commodo,
-              ut finibus metus facilisis. Nullam eget lectus non urna rhoncus
-              accumsan quis id massa. Curabitur sit amet dolor nisl. Proin
-              euismod, augue at condimentum rhoncus, massa lorem semper lacus,
-              sed lobortis augue mi vel felis. Duis ultrices sapien at est
-              convallis congue.
-            </p>
-
-            <p>
-              Fusce porta diam ac tortor elementum, ut imperdiet metus volutpat.
-              Suspendisse posuere dapibus maximus. Aliquam vitae felis libero.
-              In vehicula sapien at semper ultrices. Vivamus sed feugiat libero.
-              Sed sagittis neque id diam euismod, ut egestas felis ultricies.
-              Nullam non fermentum mauris. Sed in enim ac turpis faucibus
-              pretium in sit amet nisi.
-            </p>
-          </div>
-          <div className="grid-col grid-col_4">
-            <RegisterForm />
-
-            <center>
-              <h4>Already a Member?</h4>
-              <button className="btn btn_sizeSm" onClick={this.onLogin}>
-                Login
-              </button>
-            </center>
+            </p>            
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

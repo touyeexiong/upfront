@@ -2,16 +2,6 @@
 Grid
 -------------------------------------------------------------------------------- */
 
-.slider {
-  margin: 90%;
-}
-
-.info-section {
-  text-align: center;
-  padding: 10px;
-  font-size: large;
-}
-
 .grid {
   display: flex;
   flex: 0 1 auto;
@@ -27,8 +17,6 @@ Grid
   flex: 0 0 auto;
   padding: 0 0.5rem 0.5rem;
   box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .grid-col_1 {
@@ -89,10 +77,4 @@ Grid
 .grid-col_12 {
   flex-basis: 100%;
   max-width: 100%;
-}
-
-.center {
-  margin-top: 20px;
-  padding: 5px;
-  text-align: center;
 }
