@@ -7,20 +7,18 @@ import {
 } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../AdminLogin/AdminLogin';
+import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
+import OrderOnline from '../OrderOnline/OrderOnline';
 import './App.css';
+import OrderMenu from "../OrderOnlineMenu/OrderOnlineMenu";
 
 class App extends Component {
   componentDidMount() {
@@ -42,6 +40,16 @@ class App extends Component {
               exact
               path="/about"
               component={AboutPage}
+            />
+            <Route
+            exact
+            path="/order"
+            component={OrderOnline}
+            />
+            <Route
+            exact
+            path="/ordermenu"
+            component={OrderMenu}
             />
 
             {/* For protected routes, the view could show one of several things on the same route.

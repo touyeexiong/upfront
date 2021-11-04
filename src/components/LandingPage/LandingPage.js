@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import AppBar from '@material-ui/core/AppBar';
 import { Instagram, Facebook } from '@material-ui/icons';
+
 class LandingPage extends Component {
   state = {
     heading: 'Class Component',
@@ -46,13 +47,7 @@ class LandingPage extends Component {
           <Grid className="grid-col grid-col_10">
             <Slider {...settings}>
               <div>
-                <img alt="cat placeholder" src={require("../images/sn-concert.jpeg")} />
-              </div>
-              <div>
-                <img alt="cat placeholder" src={require("../images/bar-photo.jpeg")} />
-              </div>
-              <div>
-                <img alt="cat placeholder" src={require("../images/sonb.jpeg")} />
+                <img alt="cat placeholder" src={require("../images/cropped-upfront.jpg")} />
               </div>
             </Slider>
           </Grid>
@@ -60,9 +55,12 @@ class LandingPage extends Component {
         <div className="grid">
             <div className="grid-col grid-col_8">
               <p className="info-section">
-              Smokin' Ninjas Food Truck Lounge is a local lounge that offers a community of different food trucks in a bar setting.
-              Swing by to grab this weeks latest food truck goods while enjoying a 
-              drink in our facility!
+              Our mission is to create a realistic view and 
+              expectation of our services with absolutely no 
+              fabricated marketing or promotion to reel you in. 
+              We believe an upfront and honest approach is what 
+              builds and keeps an ongoing trust for you and for us 
+              as a reputable and credible business
               </p>
             </div>
         </div>
@@ -73,25 +71,27 @@ class LandingPage extends Component {
               <Button
                 primary
                 variant="contained"
+                className="book"
               >
-                View Our Menu
+                Book Now
         </Button>
             </Link>
         </div>
-
-        <AppBar
-          position="static"
-        >
-          <Grid
-            justify="space-evenly"
-            container
-            direction="row"
-            alignItems="center"
+        <div className="app-bar">
+          <AppBar
+            position="static"
           >
-            <Instagram style={{ fontSize: 40 }} onClick={() => this.handleSocial('https://www.instagram.com/ninjasushimn/?hl=en')}></Instagram>
-            <Facebook style={{ fontSize: 40 }} onClick={() => this.handleSocial('https://www.facebook.com/smokin.ninjas')}></Facebook>
-          </Grid>
-        </AppBar>
+            <Grid
+              justify="space-evenly"
+              container
+              direction="row"
+              alignItems="center"
+            >
+              <Instagram style={{ fontSize: 40 }} onClick={() => this.handleSocial('https://www.instagram.com/ninjasushimn/?hl=en')}></Instagram>
+              <Facebook style={{ fontSize: 40 }} onClick={() => this.handleSocial('https://www.facebook.com/smokin.ninjas')}></Facebook>
+            </Grid>
+          </AppBar>
+        </div>
         <div className="center"
         >
           <h1>Contact & Opening Times</h1>
