@@ -12,13 +12,14 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
+import InfoPage from '../AdminLogin/AdminLogin';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import OrderOnline from '../OrderOnline/OrderOnline';
 import './App.css';
 import OrderMenu from "../OrderOnlineMenu/OrderOnlineMenu";
+import AdminLogin from "../AdminLogin/AdminLogin";
 
 class App extends Component {
   componentDidMount() {
@@ -66,8 +67,8 @@ class App extends Component {
             <ProtectedRoute
               // logged in shows InfoPage else shows LoginPage
               exact
-              path="/info"
-              component={InfoPage}
+              path="/admin"
+              component={AdminLogin}
             />
 
             {/* When a value is supplied for the authRedirect prop the user will
