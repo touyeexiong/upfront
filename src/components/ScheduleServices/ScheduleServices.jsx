@@ -23,6 +23,7 @@ class OrderOnline extends Component {
             type: 'POST_CONTACT',
             payload: this.state
         });
+        this.props.history.push('/property-type')
 
     }
 
@@ -30,10 +31,11 @@ class OrderOnline extends Component {
         return (
             <>
                 <div className="grid">
-                    <div className="grid-col grid-col_8">
+                    <div className="grid-col grid-col_8" align="center">
                         <div>
+                            <h2></h2>
                             <label htmlmFor="postal">
-                                What is your postal code?
+                                <h2>What is your postal code?</h2>
                                 <input
                                     type="number"
                                     postal="postal"
@@ -45,7 +47,7 @@ class OrderOnline extends Component {
                         </div>
                         <div>
                             <label htmlFor="email">
-                                What is your email address?
+                                <h2>What is your email address?</h2>
                                 <input 
                                 type="text"
                                 email="email"
@@ -56,7 +58,7 @@ class OrderOnline extends Component {
                             </label>
                         </div>
                         <div>
-
+                            <div align="right">
                             <Button
                             primary
                             variant="contained"
@@ -64,6 +66,8 @@ class OrderOnline extends Component {
                             >
                             Next
                             </Button>
+
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,6 @@ import Footer from '../Footer/Footer';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../AdminLogin/AdminLogin';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
@@ -21,6 +20,8 @@ import './App.css';
 import OrderMenu from "../OrderOnlineMenu/OrderOnlineMenu";
 import AdminLogin from "../AdminLogin/AdminLogin";
 import PropertyType from '../PropertyType/PropertyType';
+import Services from '../Services/Services'
+import NeedClean from '../NeedClean/NeedClean';
 
 class App extends Component {
   componentDidMount() {
@@ -44,6 +45,11 @@ class App extends Component {
               component={AboutPage}
             />
             <Route
+              exact
+              path="/need-clean"
+              component={NeedClean}
+              />
+            <Route
             exact
             path="/schedule-services"
             component={ScheduleServices}
@@ -57,6 +63,12 @@ class App extends Component {
             exact
             path="/property-type/"
             component={PropertyType}
+            />
+
+            <Route
+            exact
+            path="/services/"
+            component={Services}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
