@@ -66,14 +66,14 @@ class LandingPage extends Component {
         </div>
         <div>
             <Link
-              to="/order"
+              to="/schedule-services"
             >
               <Button
                 primary
                 variant="contained"
                 className="book"
               >
-                Book Now
+                Schedule Services Now
         </Button>
             </Link>
         </div>

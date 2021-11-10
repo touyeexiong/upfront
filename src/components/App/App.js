@@ -16,7 +16,7 @@ import InfoPage from '../AdminLogin/AdminLogin';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import OrderOnline from '../OrderOnline/OrderOnline';
+import ScheduleServices from '../ScheduleServices/ScheduleServices';
 import './App.css';
 import OrderMenu from "../OrderOnlineMenu/OrderOnlineMenu";
 import AdminLogin from "../AdminLogin/AdminLogin";
@@ -44,8 +44,8 @@ class App extends Component {
             />
             <Route
             exact
-            path="/order"
-            component={OrderOnline}
+            path="/schedule-services"
+            component={ScheduleServices}
             />
             <Route
             exact
