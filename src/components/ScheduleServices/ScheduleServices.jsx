@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import OrderOnlineMenu from '../OrderOnlineMenu/OrderOnlineMenu';
 import mapStoreToProps from "../../redux/mapStoreToProps";
-import Grid from '@material-ui/core/Grid';
 import './ScheduleServices.css';
+import Button from '@material-ui/core/Button'
+import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 class OrderOnline extends Component {
     state = {
@@ -12,15 +11,20 @@ class OrderOnline extends Component {
         email: '',
     }
 
-    componentDidMount() {
-        this.props.dispatch({ type: 'FETCH_MENU' });
-    }
-
     handleInputChangeFor = (propertyName) => (event) => {
         this.setState({
             [propertyName]: event.target.value,
         });
     };
+
+    handleClick = () => {
+        console.log("we clicking stuff", this.state.postal);
+        this.props.dispatch({
+            type: 'POST_CONTACT',
+            payload: this.state
+        });
+
+    }
 
     render() {
         return (
@@ -52,10 +56,14 @@ class OrderOnline extends Component {
                             </label>
                         </div>
                         <div>
-                            <Link
-                            to="">
-                            
-                            </Link>
+
+                            <Button
+                            primary
+                            variant="contained"
+                            onClick={this.handleClick}
+                            >
+                            Next
+                            </Button>
                         </div>
                     </div>
                 </div>
