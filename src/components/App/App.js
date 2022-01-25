@@ -22,6 +22,10 @@ import AdminLogin from "../AdminLogin/AdminLogin";
 import PropertyType from '../PropertyType/PropertyType';
 import Services from '../Services/Services'
 import NeedClean from '../NeedClean/NeedClean';
+import Contact from '../Contact/Contact';
+import Booking from '../Booking/Booking';
+import Summary from '../Summary/Summary';
+import Confirmation from '../Confirmation/Confirmation';
 
 class App extends Component {
   componentDidMount() {
@@ -64,11 +68,30 @@ class App extends Component {
             path="/property-type/"
             component={PropertyType}
             />
-
+            <Route
+            exact
+            path="/contact"
+            component={Contact}
+            />
+            <Route
+            exact
+            path="/booking"
+            component={Booking}
+            />
             <Route
             exact
             path="/services/"
             component={Services}
+            />
+            <Route
+            exact
+            path="/summary"
+            component={Summary}
+            />
+            <Route
+            exact
+            path="/confirmation"
+            component={Confirmation}
             />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
@@ -118,6 +141,7 @@ class App extends Component {
               component={LandingPage}
               authRedirect="/user"
             />
+
 
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

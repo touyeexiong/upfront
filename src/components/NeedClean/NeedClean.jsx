@@ -20,7 +20,7 @@ class NeedClean extends Component {
 
     handleClick = () => {
 
-        this.props.history.push('/services')
+        this.props.history.push('contact')
 
     }
     render() {
