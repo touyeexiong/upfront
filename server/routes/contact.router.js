@@ -17,7 +17,7 @@ router.post('/post', (req, res) => {
         .then((result) => {
             res.sendStatus(200)            
         }).catch((err) => {
-            console.log(err);
+            console.log(err, "in contact router");
             res.sendStatus(500);
         })
 })

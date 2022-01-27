@@ -6,10 +6,6 @@ function* postContact(action) {
     
     try {
         yield axios.post('api/contact/post', action.payload)
-        yield put({
-            type: 'FETCH_CONTACT',
-            payload: action.payload
-        })
     }
     catch (error) {
         console.log('contact post broken at saga', error);
