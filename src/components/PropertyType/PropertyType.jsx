@@ -5,6 +5,7 @@ import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button'
+import { Paper } from "@material-ui/core";
 
 class PropertyType extends Component {
 
@@ -17,6 +18,9 @@ class PropertyType extends Component {
     render() {
         return (
             <>
+            <Paper>
+
+
             <div align="center">
             <h1>Is this a business or a home?</h1>
                 <FormControl component="fieldset">
@@ -35,7 +39,7 @@ class PropertyType extends Component {
                             Next
                             </Button>
             </div>
-
+            </Paper>
             </>)
     }
 }

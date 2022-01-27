@@ -4,6 +4,7 @@ import './ScheduleServices.css';
 import Button from '@material-ui/core/Button'
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { Paper } from '@material-ui/core';
 
 class OrderOnline extends Component {
     state = {
@@ -30,8 +31,13 @@ class OrderOnline extends Component {
     render() {
         return (
             <>
+
+
+
                 <div className="grid">
+                    
                     <div className="grid-col grid-col_8" align="center">
+                    <Paper>
                         <div>
                             <h2></h2>
                             <label htmlmFor="postal">
@@ -57,6 +63,7 @@ class OrderOnline extends Component {
                                 />
                             </label>
                         </div>
+                        </Paper>
                         <div>
                             <div align="right">
                             <Button

@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button'
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-
+import { Paper } from '@material-ui/core';
 
 
 
@@ -25,6 +25,8 @@ class Services extends Component {
     render() {
         return (
             <>
+            <Paper>
+                
             <div align="center">
                 <h1>What needs to be cleaned?</h1>
                 <h4>Select All That Apply</h4>
@@ -45,6 +47,7 @@ class Services extends Component {
             </div>
 
 
+            </Paper>
             </>
         )
     }
