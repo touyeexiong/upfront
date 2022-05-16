@@ -14,9 +14,20 @@ import FormControl from '@material-ui/core/FormControl';
 import { Box } from '@material-ui/core';
 
 
- 
-
 class NeedClean extends Component {
+
+    state = {
+        appID: '',
+        package: '',
+        price: ''
+    }
+
+    componentDidMount() {
+        this.setstate({
+            appID: this.props.match.params.id
+        })
+        console.log("in needclean", this.props.match.params);
+    }
 
     handleClick = () => {
 

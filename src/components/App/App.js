@@ -50,7 +50,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/need-clean"
+              path="/need-clean/:id"
               component={NeedClean}
               />
             <Route

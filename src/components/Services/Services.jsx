@@ -38,7 +38,7 @@ class Services extends Component {
             type: 'UPDATE_SERVICES',
             payload: this.state
         })
-        this.props.history.push('/need-clean')
+        this.props.history.push(`/need-clean/${this.props.reduxState.getAppointmentReducer.id}`)
 
     }
     render() {
