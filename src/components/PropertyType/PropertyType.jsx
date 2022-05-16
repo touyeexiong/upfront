@@ -10,7 +10,13 @@ import { Paper } from "@material-ui/core";
 class PropertyType extends Component {
 
     componentDidMount() {
-        console.log(this.props.match.params.id); 
+    }
+
+    getID = () => {
+        this.props.dispatch({
+            type: 'FETCH_CONTACT',
+            payload: this.props.match.params.id
+        });
     }
 
     handleClick = () => {

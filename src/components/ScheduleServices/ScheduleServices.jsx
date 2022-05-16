@@ -19,7 +19,6 @@ class OrderOnline extends Component {
     };
 
     handleClick = () => {
-        console.log("we clicking stuff", this.state.postal);
         this.props.dispatch({
             type: 'POST_CONTACT',
             payload: this.state
