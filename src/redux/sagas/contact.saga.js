@@ -13,10 +13,10 @@ function* postContact(action) {
 }
 
 function* fetchContact(action) {
-    console.log("we in fetch", action.payload);
+    console.log("we fetch", action.payload);
     
     try {
-        const response = yield axios.get('/api/contact/', action.payload.email)
+        const response = yield axios.get('/api/contact/', action.payload)
         yield put({ type: 'SET_CONTACT', payload: response.data })
     } catch (error) {
         console.log(error);

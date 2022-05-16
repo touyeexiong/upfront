@@ -65,7 +65,7 @@ class App extends Component {
             />
             <Route
             exact
-            path="/property-type/"
+            path="/property-type/:id"
             component={PropertyType}
             />
             <Route

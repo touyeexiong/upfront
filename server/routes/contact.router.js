@@ -23,8 +23,8 @@ router.post('/post', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log('we getting things', req.params.email);
-    let email = req.params.email;
+    console.log('we getting things', req.params);
+    let email = req.params;
     let queryText =
         `
     SELECT *

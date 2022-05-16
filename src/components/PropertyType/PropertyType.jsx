@@ -9,8 +9,12 @@ import { Paper } from "@material-ui/core";
 
 class PropertyType extends Component {
 
-    handleClick = () => {
+    componentDidMount() {
+        console.log(this.props.match.params.id); 
+    }
 
+    handleClick = () => {
+        
         this.props.history.push('/services')
 
     }
