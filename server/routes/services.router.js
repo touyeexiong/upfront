@@ -23,8 +23,8 @@ router.post('/type/post', (req, res) => {
         pool.query(queryText, [type, id])
         .then((result) => {
             console.log('we in post log', result.rows[0]);
-            
-            res.sendStatus(200)
+            let appID = result.rows[0];
+            res.send(appID)
         }).catch((err) => {
             console.log(err, "in post router");
             
@@ -32,6 +32,9 @@ router.post('/type/post', (req, res) => {
         })
 })
 
-
+router.put('/type/update', (req, res) => {
+    console.log('we in services router', req.body);
+    
+})
 
 module.exports = router;

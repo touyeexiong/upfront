@@ -6,9 +6,7 @@ function* postContact(action) {
 
     try {
         let response = yield axios.post('api/contact_information/post', action.payload)
-        console.log("we in get portion of saga", response.data)
         yield put({ type: 'SET_CONTACT', payload: response.data })
-
     }
     catch (error) {
         console.log('contact post broken at saga', error);

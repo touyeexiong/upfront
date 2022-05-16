@@ -24,7 +24,7 @@ class PropertyType extends Component {
             type: 'POST_BUSINESS_TYPE',
             payload: this.state
         })
-        this.props.history.push('/services')
+        this.props.history.push(`/services/${this.props.reduxState.getAppointmentReducer.id}`)
         
     }
 

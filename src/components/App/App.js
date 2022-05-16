@@ -80,7 +80,7 @@ class App extends Component {
             />
             <Route
             exact
-            path="/services/"
+            path="/services/:id"
             component={Services}
             />
             <Route
