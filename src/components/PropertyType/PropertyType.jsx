@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import mapStoreToProps from "../../redux/mapStoreToProps";
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -10,10 +9,12 @@ import { Paper, RadioGroup } from "@material-ui/core";
 class PropertyType extends Component {
 
     state = {
-        business_type: '',
+        id: '',
+        type: '',
     }
 
     componentDidMount() {
+        
     }
 
 
@@ -21,7 +22,7 @@ class PropertyType extends Component {
     handleClick = () => {
         this.props.dispatch({
             type: 'POST_BUSINESS_TYPE',
-            payload: this.state.business_type
+            payload: this.state
         })
         this.props.history.push('/services')
         
@@ -29,9 +30,11 @@ class PropertyType extends Component {
 
     handleChange = (event) => {
         this.setState({
-            business_type: event.target.value
+            type: event.target.value,
+            id: this.props.reduxState.getContact.id
         })
-        console.log("type state", this.state.business_type)
+        console.log("type state", this.state.type)
+        console.log("redux here?", this.props.reduxState.getContact.id);
     }
 
     render() {
@@ -64,4 +67,8 @@ class PropertyType extends Component {
     }
 }
 
-export default connect(mapStoreToProps)(PropertyType)
+const mapReduxStateToProps = reduxState => ({
+    reduxState
+});
+
+export default connect(mapReduxStateToProps)(PropertyType)

@@ -26,24 +26,4 @@ router.post('/post', (req, res) => {
             res.sendStatus(500);
         })
 })
-
-// router.get(`/:id`, (req, res) => {
-//     console.log('we getting things', id);
-//     let queryText =
-//         `
-//     SELECT *
-//     FROM "contact_information"
-//     WHERE "email" = $1;
-//     `;
-//     pool.query(queryText, [email])
-//         .then((result) => {
-//             res.send(result.rows)
-//         }).catch((err) => {
-//             console.log(err);
-//             res.sendStatus(500);
-//         })
-
-// })
-
-
 module.exports = router;

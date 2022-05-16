@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function* postBusinessType(action) {
     console.log('we in business type saga post', action.payload);
-    
+    let response = yield axios.post('api/services/type/post', action.payload)
 }
 
 

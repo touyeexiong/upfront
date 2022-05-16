@@ -23,8 +23,7 @@ class OrderOnline extends Component {
             type: 'POST_CONTACT',
             payload: this.state
         });
-        this.props.history.push(`/property-type/${this.state.email}`)
-
+        this.props.history.push('/property-type')
     }
 
     render() {
