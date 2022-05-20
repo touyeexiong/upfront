@@ -6,32 +6,68 @@ import {
     Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux'
-import mapStoreToProps from "../../redux/mapStoreToProps";
 import Button from '@material-ui/core/Button'
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import { Box } from '@material-ui/core';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import { Paper, RadioGroup } from "@material-ui/core";
 
 
 class NeedClean extends Component {
 
     state = {
-        appID: '',
+        appID: Number(this.props.match.params.id),
+        type: this.props.reduxState.getAppointmentReducer,
         package: '',
-        price: ''
+        price: '',
+        total: '',
+        packages_selected: '',
     }
 
     componentDidMount() {
-        this.setstate({
-            appID: this.props.match.params.id
+        // this.handleInfo ();
+        this.getProducts();
+        console.log("in needclean", this.state);
+    }
+
+    getProducts = () => {
+        this.props.dispatch({
+            type: 'FETCH_PRODUCTS'
         })
-        console.log("in needclean", this.props.match.params);
+    }
+
+    handleInfo = () => {
+        this.setstate({
+            type: this.props.reduxState.getAppointmentReducer
+        })
     }
 
     handleClick = () => {
 
-        this.props.history.push('contact')
+        this.props.history.push('/contact')
+
+    }
+
+    handleSelected = (event) => {
+        console.log(event.target.value, event.target.id);
+        let total = this.state.total
+        let sum = total + Number(event.target.value)
+        if (this.state.total = ''){
+            this.setState( {
+                total: Number(event.target.value)
+            })
+        } else {
+            this.setState({
+                total: Number(total) + Number(event.target.value)
+            })
+        }
+
 
     }
     render() {
@@ -39,19 +75,32 @@ class NeedClean extends Component {
             <>
                 <div align="center">
                     <Box component="span">
-                        <Button color="primary" variant="outlined">Final Cost: $</Button>
+                        <Button color="primary" variant="outlined">Final Cost: ${this.state.total}</Button>
                     </Box>
                     <h1>What needs to be cleaned?</h1>
-                    <div align="left">
-                        <h4>Carpet Cleaning</h4>
+                    <div align="center">
+                        <h4>Services Offered</h4>
 
                     </div>
-                    <FormControl component="fieldset">
+                        <TableContainer>
+                            <TableBody>
+                                {this.props.reduxState.getProductsReducer.map((product) => {
+                                    return (
+                                        <TableRow key={product.id}>
+                                            
+                                            <TableCell>{product.name}</TableCell>
+                                            <TableCell>${product.price}</TableCell>
+                                            <button id={product.id} value={product.price} onClick={this.handleSelected}>Select</button>
+                                        </TableRow>
+                                    )
+                                })}
+                        
+                            </TableBody>
+                        </TableContainer>
+                    {/* <FormControl component="fieldset">
                         <FormControlLabel value="carpet-cleaning" control={<Radio />} label="5 Room Package" />
-                        <FormControlLabel value="disinifectant" control={<Radio />} label="4 Room Package" />
+                        <FormControlLabel value="disinfectant" control={<Radio />} label="4 Room Package" />
                         <FormControlLabel value="vehicle" control={<Radio />} label="3 Room Package" />
-                        <FormControlLabel value="carpet-cleaning" control={<Radio />} label="2 room Package" />
-                        <FormControlLabel value="disinifectant" control={<Radio />} label="1 Room Package" />
                     </FormControl>
                     <div align="left">
 
@@ -70,7 +119,7 @@ class NeedClean extends Component {
                         <FormControlLabel value="disinifectant" control={<Radio />} label="Mid-Size SUV/Pick-Up Truck Cleaning" />
                         <FormControlLabel value="carpet-cleaning" control={<Radio />} label="Large SUV/Van Cleaning" />
                         <FormControlLabel value="disinifectant" control={<Radio />} label="Vehicle Floor Cleaning Only Cleaning" />
-                    </FormControl>
+                    </FormControl> */}
                 </div>
 
                 <div align="right">
@@ -89,4 +138,8 @@ class NeedClean extends Component {
     }
 }
 
-export default connect(mapStoreToProps)(NeedClean)
+const mapReduxStateToProps = reduxState => ({
+    reduxState
+});
+
+export default connect(mapReduxStateToProps)(NeedClean)

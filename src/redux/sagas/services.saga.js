@@ -4,6 +4,8 @@ import axios from 'axios'
 function* postBusinessType(action) {
     try {
         let response = yield axios.post('api/services/type/post', action.payload)
+        console.log('we in get Appointment call for reducer', response.data);
+        
         yield put({ type: 'SET_APPOINTMENT', payload: response.data })
     }
     catch (error) {
@@ -14,9 +16,8 @@ function* postBusinessType(action) {
 function* updateServices(action) {
     try {
         let response = yield axios.put('/api/services/type/update', action.payload)
-        console.log('we in update services', action.payload);
-        
-        // yield put({ type: 'PUT_RESERVATION', payload: r})
+        console.log('we in update services', action.payload);        
+        yield put({ type: 'SET_APPOINTMENT', payload: response.data })
     }
     catch (error) {
         console.log('error in put', error);

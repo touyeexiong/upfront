@@ -12,6 +12,8 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const contact = require('./routes/contact.router');
 const servicesRouter = require('./routes/services.router');
+const productsRouter = require('./routes/products.router');
+const { KeyboardArrowLeft } = require('@material-ui/icons');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -27,7 +29,8 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/contact_information', contact);
-app.use('/api/services', servicesRouter)
+app.use('/api/services', servicesRouter);
+app.use('/api/products', productsRouter);
 
 // Serve static files
 app.use(express.static('build'));

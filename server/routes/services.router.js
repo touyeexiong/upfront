@@ -52,7 +52,7 @@ router.put('/type/update', (req, res) => {
     `;
     pool.query(queryText, [service, service_description, service_price, service_package, id])
         .then((result) => {
-            console.log('we in update log for services', id);
+            console.log('we in update log for services', req.body);
             res.send(req.body);
         }).catch((err) => {
             console.log(err, 'in update router');

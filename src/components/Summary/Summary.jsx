@@ -122,7 +122,7 @@ class Summary extends Component {
                         variant="contained"
                         onClick={this.handleClick}
                     >
-                        Next
+                        Submit
                     </Button>
 
                 </div>

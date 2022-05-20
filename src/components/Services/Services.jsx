@@ -22,7 +22,9 @@ class Services extends Component {
     }
 
     componentDidMount() {
-        console.log("services pass through id", this.props.reduxState.getAppointmentReducer.id);
+        console.log("services pass through id", this.props.reduxState.getAppointmentReducer.id
+        
+        );
     }
 
     handleChange = (event) => {
@@ -37,6 +39,9 @@ class Services extends Component {
         this.props.dispatch({
             type: 'UPDATE_SERVICES',
             payload: this.state
+        })
+        this.props.dispatch({
+            type: 'FETCH_PRODUCTS',
         })
         this.props.history.push(`/need-clean/${this.props.reduxState.getAppointmentReducer.id}`)
 
