@@ -21,7 +21,7 @@ class Contact extends Component {
     event.preventDefault();
 
     this.props.dispatch({
-      type: 'REGISTER',
+      type: 'UPDATE_CONTACT',
       payload: {
         email_address: this.state.email_address,
         first_name: this.state.first_name,

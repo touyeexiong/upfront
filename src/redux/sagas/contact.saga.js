@@ -25,9 +25,16 @@ function* fetchContact(action) {
     }
 }
 
+// funciton* updateContact(action) {
+//     try {
+//         let response = yield axios.put(`/api/cont_information/${action.payload.}`)
+//     }
+// }
+
 function* contactSaga() {
     yield takeLatest('POST_CONTACT', postContact);
     yield takeLatest('FETCH_CONTACT', fetchContact);
+    // yield takeLatest('UPDATE_CONTACT', updateContact);
 }
 
 export default contactSaga
