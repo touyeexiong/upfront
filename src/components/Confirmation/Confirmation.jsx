@@ -33,79 +33,86 @@ class Confirmation extends Component {
         return (
             <>
 
-                <div className="grid">
+<div className="grid">
                     <div className="grid-col grid-col_8" align="center">
 
-                        <h2>Appointment Confirmation</h2>
+                        <h2>Appointment Summary</h2>
                         <Paper>
                             <h3>Contact Information</h3>
                             <div>
                                 <label htmlFor="email_address">
-                                    Email Address:
+                                    Email Address: touyeexiong@gmail.com
 
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="first_name">
-                                    First Name:
+                                    First Name: Tou
 
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="last_name">
-                                    Last Name:
+                                    Last Name: Xiong
 
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="address_1">
-                                    Address 1:
+                                    Address 1: 3435 Promenade Ave
 
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="address_2">
-                                    Address 2:
+                                    Address 2: Apt 104
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="city">
-                                    City:
+                                    City: Eagan
                                 </label>
                             </div>
                             <div>
                                 <label htmlFor="state">
-                                    State:
+                                    State: MN
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="zip">
-                                    Zip Code:
+                                    Zip Code: 55123
                                 </label>
                             </div>
 
                             <div>
                                 <label htmlFor="phone">
-                                    Phone:
+                                    Phone: 6513549476
                                 </label>
                             </div>
 
                         </Paper>
                         <Paper>
                             <h3>Specific Cleaning Service Date</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                            <p>Date: 8/25/2022</p>
+                            <p>
+                                Time Slot: 3PM to 5PM
+                            </p>
                         </Paper>
                         <div>
-                            <Paper>
-                                <h3> Service Pricing Breakdown</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
-                            </Paper>
+                        <Paper>
+                            <h3> Service Pricing Breakdown</h3>
+                            <h4>Service Type: Carpet Cleaning</h4>
+                            <p>
+                                4 Room Special: $169
+                            </p>
+                            <h4></h4>
+                        </Paper>
 
                         </div>
 

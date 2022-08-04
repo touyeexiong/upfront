@@ -103,7 +103,7 @@ class Summary extends Component {
                         </Paper>
                         <Paper>
                             <h3>Specific Cleaning Service Date</h3>
-                            <p>Date: 7/25/2022</p>
+                            <p>Date: 8/25/2022</p>
                             <p>
                                 Time Slot: 3PM to 5PM
                             </p>
@@ -111,7 +111,11 @@ class Summary extends Component {
                         <div>
                         <Paper>
                             <h3> Service Pricing Breakdown</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                            <h4>Service Type: Carpet Cleaning</h4>
+                            <p>
+                                4 Room Special: $169
+                            </p>
+                            <h4></h4>
                         </Paper>
 
                         </div>

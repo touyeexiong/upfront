@@ -59,7 +59,7 @@ class Services extends Component {
                             onChange={this.handleChange}
                             >
                                 <FormControlLabel value="carpet-cleaning" control={<Radio />} label="Carpet Cleaning" />
-                                <FormControlLabel value="disinifectant" control={<Radio />} label="Disinfectant Fogging Treatment" />
+                                {/* <FormControlLabel value="disinifectant" control={<Radio />} label="Disinfectant Fogging Treatment" /> */}
                                 <FormControlLabel value="vehicle" control={<Radio />} label="Vehicle" />
                             </RadioGroup>
                         </FormControl>
