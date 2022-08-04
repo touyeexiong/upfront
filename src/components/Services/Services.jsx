@@ -40,9 +40,9 @@ class Services extends Component {
             type: 'UPDATE_SERVICES',
             payload: this.state
         })
-        this.props.dispatch({
-            type: 'FETCH_PRODUCTS',
-        })
+        // this.props.dispatch({
+        //     type: 'FETCH_PRODUCTS',
+        // })
         this.props.history.push(`/need-clean/${this.props.reduxState.getAppointmentReducer.id}`)
 
     }

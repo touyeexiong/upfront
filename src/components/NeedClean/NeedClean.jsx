@@ -26,7 +26,6 @@ class NeedClean extends Component {
     }
 
     componentDidMount() {
-        // this.handleInfo ();
         this.getProducts();
         console.log("in needclean", this.state);
     }
@@ -52,7 +51,6 @@ class NeedClean extends Component {
     handleSelected = (event) => {
         console.log(event.target.value, event.target.id);
         let total = this.state.total
-        let sum = total + Number(event.target.value)
         if (this.state.total = '') {
             this.setState({
                 total: Number(event.target.value)
