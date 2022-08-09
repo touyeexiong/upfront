@@ -17,7 +17,7 @@ import { Paper, RadioGroup } from '@material-ui/core';
 class Services extends Component {
 
     state = {
-        id: '',
+        id: this.props.reduxState.getAppointmentReducer.id,
         service: '',
     }
 
@@ -30,7 +30,7 @@ class Services extends Component {
     handleChange = (event) => {
         this.setState({
             service: event.target.value,
-            id: this.props.reduxState.getAppointmentReducer.id
+            // id: this.props.reduxState.getAppointmentReducer.id
         })
         console.log(this.state);
     }
