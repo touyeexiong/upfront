@@ -1,6 +1,4 @@
-const getProductsReducer = (state = [], action) => {
-    console.log('we in reducer', action.payload);
-    
+const getProductsReducer = (state = [], action) => {    
     switch (action.type) {
         case 'SET_PRODUCTS':
         return action.payload;
